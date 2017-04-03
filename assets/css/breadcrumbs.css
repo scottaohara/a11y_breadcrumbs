@@ -1,0 +1,46 @@
+/** --------------------------------------------------------------------
+
+  Accessible Breadcrumbs
+
+--------------------------------------------------------------------- */
+
+.breadcrumb-nav {
+  background: #eee;
+  border: 1px solid #ccc;
+  font-size: .85em;
+  margin: 0 0 2em;
+  padding: .5em;
+}
+
+.breadcrumb-nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb-nav li {
+  display: inline-block;
+}
+
+.breadcrumb-nav li:not(:last-child):after {
+  content: "/\00a0";
+  display: inline-block;
+  padding-left: .5ch;
+  speak: none;
+}
+
+.breadcrumb-nav a {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.breadcrumb-nav [aria-current="page"] {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.breadcrumb-nav [aria-current="page"]:hover,
+.breadcrumb-nav [aria-current="page"]:focus {
+  text-decoration: underline;
+}
