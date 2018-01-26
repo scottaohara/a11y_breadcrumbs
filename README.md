@@ -1,10 +1,9 @@
 # Accessible BreadCrumbs  
-
-Standard pattern for breadcrumb navigations. Use this pattern with help CMS/framework of choice to populate the navigation items.
+Standard pattern for breadcrumb navigations. Use this pattern with the help of your CMS or site generator of choice, to populate the breadcrumb navigation items.
 
 
 ## How does it work?  
-What sets a breadcrumb navigation apart from other navigations, primarily revolves around the labeling of the navigation, and the type of list element that is used.
+A breadcrumb navigation is different from other navigations, in that it represents the path from the index, or home page, to the current page.
 
 ```html
 <nav class="breadcrumb-nav" aria-label="breadcrumb">
@@ -16,23 +15,23 @@ What sets a breadcrumb navigation apart from other navigations, primarily revolv
     </li>
     <li>
       <a href="#">
-        Second Page
+        Sub Page
       </a>
     </li>
     <li>
       <a href="#" aria-current="page">
-        Current Page
+        Current Sub Page
       </a>
     </li>
   </ol>
 </nav>
 ```
 
-In the above markup example, the ```<nav>``` element has an ```aria-label="breadcrumb"``` to announce this as a 'breadcrumb navigation' to assistive technologies.  
+In the markup example, the `<nav>` element has an `aria-label="breadcrumb"` to announce this as a "breadcrumb navigation" to screen readers.  
 
-The ```<ol>``` is semantically appropriate, as these links are meant to be represented in an ordered, hierarchical, manner.  
+The `<ol>` is semantically appropriate, as these links are meant to be represented in a hierarchical structure.  
 
-The ```aria-current="page"``` will give additional context to assistive technologies that understand this attribute, that it represents the current page, adding additional context to it's placement in the list/link ordering.  
+The `aria-current="page"` should be placed on the last element in the breadcrumb navigation.  This will append "current page" to the announcement of the accessible name of the link. For example: "About, current page".  
 
 CSS pseudo elements are used to add in dividers between the list elements, and the current page is purposefully styled differently than the links prior to it, to further visually indicate it as the current page.
 
