@@ -34,6 +34,13 @@
   font-weight: bold;
 }
 
+.breadcrumb-nav a:focus,
+.breadcrumb-nav a:hover {
+  outline: 2px solid;
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
 .breadcrumb-nav [aria-current="page"] {
   color: inherit;
   font-weight: normal;
@@ -42,5 +49,5 @@
 
 .breadcrumb-nav [aria-current="page"]:hover,
 .breadcrumb-nav [aria-current="page"]:focus {
-  text-decoration: underline;
+  outline: 4px solid;
 }
