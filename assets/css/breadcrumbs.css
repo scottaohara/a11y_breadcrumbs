@@ -41,13 +41,13 @@
   text-decoration: none;
 }
 
-.breadcrumb-nav [aria-current="page"] {
+.breadcrumb-nav [aria-current] {
   color: inherit;
   font-weight: normal;
   text-decoration: none;
 }
 
-.breadcrumb-nav [aria-current="page"]:hover,
-.breadcrumb-nav [aria-current="page"]:focus {
+.breadcrumb-nav [aria-current]:hover,
+.breadcrumb-nav [aria-current]:focus {
   outline: 4px solid;
 }

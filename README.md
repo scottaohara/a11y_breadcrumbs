@@ -1,4 +1,4 @@
-# Accessible BreadCrumbs  
+# Accessible Breadcrumbs  
 Standard pattern for breadcrumb navigations. Use this pattern with the help of your CMS or site generator of choice, to populate the breadcrumb navigation items.
 
 
@@ -31,9 +31,11 @@ In the markup example, the `<nav>` element has an `aria-label="breadcrumb"` to a
 
 The `<ol>` is semantically appropriate, as these links are meant to be represented in a hierarchical structure.  
 
-The `aria-current="page"` should be placed on the last element in the breadcrumb navigation.  This will append "current page" to the announcement of the accessible name of the link. For example: "About, current page".  
+The `aria-current="page"`, or `aria-current="location"` should be placed on the last element in the breadcrumb navigation.  This will append "current page (or) location" to the announcement of the accessible name of the link. For example: "About, current page".  
 
 CSS pseudo elements are used to add in dividers between the list elements, and the current page is purposefully styled differently than the links prior to it, to further visually indicate it as the current page.
+
+You can review the [breadcrumb demo page](https://scottaohara.github.io/a11y_breadcrumbs/) for additional information and usage notes.
 
 
 ## License & Such  

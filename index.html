@@ -1,68 +1,113 @@
 <!DOCTYPE HTML>
-<html lang="en-us" class="no-js">
+<html lang="en-us">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>
-      Accessible BreadCrumb Navigation
-    </title>
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script>
-      // remove no-js and add 'js' to the HTML
-      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-    </script>
-
-    <style>
-    *,*:after,*:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-family:arial}*{margin-bottom:0}body,html{background:#fafafa;color:#450c13;font-size:18px;line-height:1.3;margin:0;padding:0;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}.content-area{padding:20px;margin:auto;max-width:600px}a{color:#921c2b}a:hover,a:focus{color:#c12f48}hr{margin:20px 0;}p{margin:0;}[role="banner"]{margin-bottom:32px;}h1{margin-bottom:20px;}pre code {padding: 20px; font-family: monospace; background: #000; color: #fff; display: block;}
-    </style>
-
-    <link rel="stylesheet" href="assets/css/breadcrumbs.css" />
+    <title>Accessible Breadcrumb Navigation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/--demo-only--.css">
+    <link rel="stylesheet" href="assets/css/breadcrumbs.css">
   </head>
 
   <body id="body">
+    <div id="page" class="demo-wrap">
 
-    <div id="page" class="content-area">
-
-      <header role="banner">
-        <h1>
-          Accessible BreadCrumb Navigation Pattern
+      <header class="demo-wrap__header">
+        <h1 class="demo-wrap__header__title">
+          Accessible Breadcrumb Navigation Pattern
         </h1>
-        <p>
-          Pattern for accurately conveying the parent page(s) and current page to a user's current location within an application or website.
-        </p>
-
-        <p style="margin-top: 20px;">
-          View the <a href="https://github.com/scottaohara/a11y_breadcrumbs">source code for this pattern</a>.
-        </p>
+        <nav>
+          <a href="https://github.com/scottaohara/a11y_breadcrumbs">See source on GitHub</a>
+        </nav>
       </header>
 
-      <main aria-label="Demo Content">
+      <main aria-label="Content">
+        <div class="demo">
+          <p>Last updated: <time>August 28, 2018</time></p>
 
-        <nav class="breadcrumb-nav" aria-label="breadcrumbs">
-          <ol>
-            <li>
-              <a href="#">
-                Index
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Second Page
-              </a>
-            </li>
-            <li>
-              <a href="#" aria-current="page">
-                Current Page
-              </a>
-            </li>
-          </ol>
-        </nav>
+          <p>
+            Examples of a breadcrumb navigation using <code>aria-label</code> to provide an accessible name, and <code>aria-current</code> to indicate the currently active link.
+          </p>
 
+          <h2>Example: current page</h2>
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <ol>
+              <li>
+                <a href="#">
+                  Index
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Second Page
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-current="page">
+                  This Page
+                </a>
+              </li>
+            </ol>
+          </nav>
+
+          <h2>Example: current location</h2>
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <ol>
+              <li>
+                <a href="#">
+                  Index
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Second Page
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-current="location">
+                  This Page
+                </a>
+              </li>
+            </ol>
+          </nav>
+
+          <section class="demo-details">
+            <h3>
+              Pattern Details
+            </h3>
+
+            <p>
+              Breadcrumbs are useful on large websites where pages have clearly defined hierarchy. These navigation patterns can allow users to easily backtrack through related pages.
+            </p>
+
+            <p>
+              Breadcrumbs aren't meant to be used for single-level websites, where there are no logical groupings of related content. For slightly more complex websites, where there may only be some instances of leveled navigation groupings, breadcrumbs may still not be necessary if they don't provide much in the way of a simplified user experience over using the primary navigation.
+            </p>
+
+
+            <h4>Usage note</h4>
+            <p>
+              Being that a breadcrumb is contained within a <code>nav</code> element, it will be surfaced as a landmark to screen readers.  Providing it an accessible name of "breadcrumb" (or whatever term may be more meaningful to your site) will help differentiate it from any other navigation landmarks in the current document, such as the primary navigation.
+            </p>
+
+            <p>
+              The last link in the breadcrumb should have the <code>aria-current</code> attribute, which either have the value of <code>page</code> or <code>location</code>. The value you choose is largely up to you since both make sense in the context of the breadcrumb pattern. e.g. the last link in the breadcrumb is the current "page", while also serving as the current "location" in the breadcrumb trail.  Note that if using <code>aria-current</code> in primary navigation patterns, the <code>page</code> value is what would be expected there.
+            </p>
+
+            <p>
+              Some other breadcrumb patterns remove the <code>&lt;a></code> element, or at least the <code>href</code> from the link. These examples retain the <code>a href</code> for current link, as without it, people using a screen reader and navigating by links, or via focusable content with the <kbd>tab</kbd> key would not come across the currently active link.
+            </p>
+          </section>
+
+          <h3>
+            Continue reading
+          </h3>
+          <p>
+            For more information about the <code>aria-current</code> attribute, read
+            <a href="https://tink.uk/using-the-aria-current-attribute/">Using the <code>aria-current</code> attribute</a> by Léonie Watson.
+          </p>
+        </div>
       </main>
-
     </div>
-
   </body>
 </html>
-
