@@ -23,10 +23,13 @@
 }
 
 .breadcrumb-nav li:not(:last-child):after {
-  content: "/\00a0";
+  content: "";
   display: inline-block;
-  padding-left: .5ch;
-  speak: none;
+  margin-left: .75ch;
+  margin-right: .5ch;
+  border-top: .75ch solid transparent;
+  border-bottom: .75ch solid transparent;
+  border-left: .75ch solid #000;
 }
 
 .breadcrumb-nav a {

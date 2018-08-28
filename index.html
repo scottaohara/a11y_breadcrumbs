@@ -76,12 +76,48 @@
               Pattern Details
             </h3>
 
+            <details open>
+              <summary>Pattern Markup</summary>
+              <pre><code class="language-html">&lt;nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  &lt;ol>
+    &lt;li>
+      &lt;a href="/">
+        Index
+      &lt;/a>
+    &lt;/li>
+    &lt;li>
+      &lt;a href="/pg2">
+        Second Page
+      &lt;/a>
+    &lt;/li>
+    &lt;li>
+      &lt;a href="/pg2/this-pg" aria-current="page"> &lt;!-- or "location" -->
+        This Page
+      &lt;/a>
+    &lt;/li>
+  &lt;/ol>
+&lt;/nav></code></pre>
+            </details>
+
             <p>
               Breadcrumbs are useful on large websites where pages have clearly defined hierarchy. These navigation patterns can allow users to easily backtrack through related pages.
             </p>
 
             <p>
               Breadcrumbs aren't meant to be used for single-level websites, where there are no logical groupings of related content. For slightly more complex websites, where there may only be some instances of leveled navigation groupings, breadcrumbs may still not be necessary if they don't provide much in the way of a simplified user experience over using the primary navigation.
+            </p>
+
+            <h4>Affects on Screen Reader Announcements?</h4>
+            <p>
+              You may notice that the dividers between each link/list item of the breadcrumb are created via CSS pseudo elements. Originally I had used CSS <code>content: "/\00a0";</code> with <code>speak: none;</code> as a divider.  However, even though added by CSS, screen readers like NVDA would announce the "slash" if navigating by list items, and VoiceOver would even move focus to the "/" if navigating with <kbd>VO + left/right</kbd> arrow keys.
+            </p>
+
+            <p>
+              Using CSS to create a arrow/triangle (or any other sort of divider that can be made with CSS alone) will allow for a separator that won't be announced by a screen reader, and won't require additional list items to be used, just to then hidden with <code>aria-hidden="true"</code>.
+            </p>
+
+            <p>
+              Note that screen reader support for <code>aria-current</code> is rather good, with gaps in support with TalkBack, and with Microsoft Edge + Narrator or JAWS 2018.  For a full breakdown of support, please refer to the <a href="http://design-patterns.tink.uk/aria-current/">support table on Léonie Watson's test page</a>.
             </p>
 
 
@@ -107,9 +143,13 @@
             <a href="https://tink.uk/using-the-aria-current-attribute/">Using the <code>aria-current</code> attribute</a> by Léonie Watson.
           </p>
           <p>
-            Additionaly, can should review 
-            <a href="https://w3c.github.io/aria-practices/examples/breadcrumb/index.html">the <abbr>ARIA</abbr> Authoring Practices breadcrumbs example</a>, 
+            Additionally, can should review
+            <a href="https://w3c.github.io/aria-practices/examples/breadcrumb/index.html">the <abbr>ARIA</abbr> Authoring Practices breadcrumbs example</a>,
             as well as the <a href="https://www.w3.org/TR/wai-aria-1.2/#aria-current">ARIA specification for <code>aria-current</code></a>.
+          </p>
+
+          <p>
+            Thank you to <a href="https://twitter.com/MichielBijl">@MichielBijl</a> and the APG for a more elegant solution for breadcrumb dividers, and <a href="https://twitter.com/inclusicomps">@inclusicomps</a> for reminding me that <a href="https://css-tricks.com/almanac/properties/s/speak/">CSS speak has poor support</a>.
           </p>
         </div>
       </main>
