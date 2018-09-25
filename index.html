@@ -107,7 +107,7 @@
               Breadcrumbs aren't meant to be used for single-level websites, where there are no logical groupings of related content. For slightly more complex websites, where there may only be some instances of leveled navigation groupings, breadcrumbs may still not be necessary if they don't provide much in the way of a simplified user experience over using the primary navigation.
             </p>
 
-            <h4>Affects on Screen Reader Announcements?</h4>
+            <h4>Effects on Screen Reader Announcements?</h4>
             <p>
               You may notice that the dividers between each link/list item of the breadcrumb are created via CSS pseudo elements. Originally I had used CSS <code>content: "/\00a0";</code> with <code>speak: none;</code> as a divider.  However, even though added by CSS, screen readers like NVDA would announce the "slash" if navigating by list items, and VoiceOver would even move focus to the "/" if navigating with <kbd>VO + left/right</kbd> arrow keys.
             </p>
