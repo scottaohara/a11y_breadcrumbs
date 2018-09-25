@@ -38,9 +38,9 @@ CSS pseudo elements are used to add in dividers between the list elements, and t
 You can review the [breadcrumb demo page](https://scottaohara.github.io/a11y_breadcrumbs/) for additional information and usage notes.
 
 
-## License & Such  
-This script was written by [Scott O'Hara](https://twitter.com/scottohara).
+## License & Such
+This pattern was written by Scott O'Hara ([Website](https://www.scottohara.me), [Twitter](https://twitter.com/scottohara)), referencing resources such as [Using the `aria-current` attribute](https://tink.uk/using-the-aria-current-attribute/), and verifying with the [ARIA Authoring Practices](https://w3c.github.io/aria-practices/examples/breadcrumb/index.html).
 
-It has an [MIT license](https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md).
+It has an [MIT](https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md) license.
 
-Do with it what you will :)
+Use it, modify it, contribute to it to help make your project more accessible :)
