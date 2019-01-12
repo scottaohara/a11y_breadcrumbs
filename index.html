@@ -23,7 +23,7 @@
 
       <main aria-label="Content">
         <div class="demo">
-          <p>Last updated: <time>August 28, 2018</time></p>
+          <p>Last updated: <time>January 11, 2019</time></p>
 
           <p>
             Examples of a breadcrumb navigation using <code>aria-label</code> to provide an accessible name, and <code>aria-current</code> to indicate the currently active link.
@@ -114,6 +114,10 @@
 
             <p>
               Using CSS to create a arrow/triangle (or any other sort of divider that can be made with CSS alone) will allow for a visual separator that won't be announced by a screen reader. It also won't require additional list items containing the divider, or a <code>span</code> containing something like a "/" to be added to each necessary list item, just to then be hidden with <code>aria-hidden="true"</code> so it's not announced or included in the number of items in the list.
+            </p>
+
+            <p>
+              The <bode>:before</bode> pseudo element is added to the <code>li</code>s of the breadcrumb list <a href="https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/">to re-add list semantics to VoiceOver</a> on macOS and iOS.
             </p>
 
             <p>
