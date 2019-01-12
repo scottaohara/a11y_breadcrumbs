@@ -22,6 +22,11 @@
   display: inline-block;
 }
 
+.breadcrumb-nav li:before {
+  content: "\2000";
+  position: absolute;
+}
+
 .breadcrumb-nav li:not(:last-child):after {
   content: "";
   display: inline-block;
