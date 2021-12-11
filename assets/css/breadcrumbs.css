@@ -50,7 +50,7 @@
   text-decoration: none;
 }
 
-.breadcrumb-nav [aria-current]:hover,
+.breadcrumb-nav [aria-current][href]:hover,
 .breadcrumb-nav [aria-current]:focus {
   outline: 4px solid;
 }
