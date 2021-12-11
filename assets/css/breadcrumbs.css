@@ -22,19 +22,14 @@
   display: inline-block;
 }
 
-.breadcrumb-nav li:before {
-  content: "\2000";
-  position: absolute;
-}
-
-.breadcrumb-nav li:not(:last-child):after {
+.breadcrumb-nav li:not(:last-child)::after {
+  border-bottom: .75ch solid transparent;
+  border-left: .75ch solid #000;
+  border-top: .75ch solid transparent;
   content: "";
   display: inline-block;
   margin-left: .75ch;
   margin-right: .5ch;
-  border-top: .75ch solid transparent;
-  border-bottom: .75ch solid transparent;
-  border-left: .75ch solid #000;
 }
 
 .breadcrumb-nav a {
@@ -43,7 +38,7 @@
 }
 
 .breadcrumb-nav a:focus,
-.breadcrumb-nav a:hover {
+.breadcrumb-nav a[href]:hover {
   outline: 2px solid;
   outline-offset: 2px;
   text-decoration: none;
