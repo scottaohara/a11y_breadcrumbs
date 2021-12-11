@@ -150,15 +150,15 @@
             </p>
 
             <p>
-              Using CSS to create a arrow/triangle (or any other sort of divider that can be made with CSS alone) will allow for a visual separator that won't be announced by a screen reader. It also won't require additional list items containing the divider, or a <code>span</code> containing something like a "/" to be added to each necessary list item, just to then be hidden with <code>aria-hidden="true"</code> so it's not announced or included in the number of items in the list.
+              Using CSS to create a arrow/triangle (or any other sort of divider that can be made with CSS alone) will allow for a visual separator that won't be announced by a screen reader. It also won't require additional list items containing the divider, or a <code>&lt;span></code> containing something like a "/" to be added to each necessary list item, just to then be hidden with <code>aria-hidden="true"</code> so it's not announced or included in the number of items in the list.
             </p>
 
             <p>
-              The <bode>:before</bode> pseudo element is added to the <code>li</code>s of the breadcrumb list <a href="https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/">to re-add list semantics to VoiceOver</a> on macOS and iOS.
+              macOS and iOS will not report a <code>&lt;ol></code> as a list [when removing its default list markers](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html). A `role=list` can be added to the <code>&lt;ol></code> element to make sure the announcement of the list remains.
             </p>
 
             <p>
-              Note that screen reader support for <code>aria-current</code> is rather good. As of 2021, most gaps in implementation support have been filled.  If you find a screen reader / browser pairing that does not support <code>aria-current</code>, you should file a bug.  
+              Note that screen reader support for <code>aria-current</code> is rather good. As of Dec 2021, most gaps in implementation support have been filled.  If you find a screen reader / browser pairing that does not support <code>aria-current</code>, you should file a bug.  
             </p>
 
 
