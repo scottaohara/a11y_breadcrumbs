@@ -28,8 +28,8 @@
             Examples of a breadcrumb navigation using <code>aria-label</code> to provide an accessible name, and <code>aria-current</code> to indicate the currently active link.
           </p>
 
-          <h2>Example: using current "<code>aria-current=page</code>"</h2>
-          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <h2>Example: using "<code>aria-current=page</code>" on last link</h2>
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb example">
             <ol>
               <li>
                 <a href="#">
@@ -49,8 +49,8 @@
             </ol>
           </nav>
 
-          <h2>Example: using "<code>aria-current=location</code>"</h2>
-          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <h2>Example: using "<code>aria-current=location</code>" on last link</h2>
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb example 2">
             <ol>
               <li>
                 <a href="#">
@@ -66,6 +66,25 @@
                 <a href="#" aria-current="location">
                   This Page
                 </a>
+              </li>
+            </ol>
+          </nav>
+          
+          <h2>Example: using "<code>aria-current=location</code>" on last list item</h2>
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb example 3">
+            <ol>
+              <li>
+                <a href="#">
+                  Index
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Second Page
+                </a>
+              </li>
+              <li aria-current="page">
+                This Page
               </li>
             </ol>
           </nav>
@@ -95,6 +114,25 @@
       &lt;/a>
     &lt;/li>
   &lt;/ol>
+&lt;/nav>
+
+<!-- example without a link in the last list item -->
+&lt;nav class="breadcrumb-nav" aria-label="Breadcrumb example 2">
+  &lt;ol>
+    &lt;li>
+      &lt;a href="#">
+        Index
+      &lt;/a>
+    &lt;/li>
+    &lt;li>
+      &lt;a href="#">
+        Second Page
+      &lt;/a>
+    &lt;/li>
+    &lt;li aria-current="location">
+      This Page
+    &lt;/li>
+  &lt;/ol>
 &lt;/nav></code></pre>
             </details>
 
@@ -106,7 +144,7 @@
               Breadcrumbs aren't meant to be used for single-level websites, where there are no logical groupings of related content. For slightly more complex websites, where there may only be some instances of leveled navigation groupings, breadcrumbs may still not be necessary if they don't provide much in the way of a simplified user experience over using the primary navigation.
             </p>
 
-            <h4>Effects on Screen Reader Announcements?</h4>
+            <h4>Screen Reader Announcements?</h4>
             <p>
               You may notice that the dividers between each link/list item of the breadcrumb are created via CSS pseudo elements. Originally I had used CSS <code>content: "/\00a0";</code> with <code>speak: none;</code> as a divider.  However, even though added by CSS, screen readers like NVDA would announce the "slash" if navigating by list items, and VoiceOver would even move focus to the "/" if navigating with <kbd>VO + left/right</kbd> arrow keys. <code>speak: none</code> has no practical support, which is unfortunate.
             </p>
@@ -134,7 +172,7 @@
             </p>
 
             <p>
-              Some other breadcrumb patterns remove the <code>&lt;a></code> element, or at least the <code>href</code> from the link. These examples retain the <code>a href</code> for current link, as without it, people using a screen reader and navigating by links, or via focusable content with the <kbd>tab</kbd> key would not come across the currently active link.
+              Some other breadcrumb patterns remove the <code>&lt;a></code> element, or at least the <code>href</code> from the link.  This is demonstrated in the third example, where the first two examples keep the last item in the breadcrumb as a hyperlink.  One reason to keep the hyperlink is so that people using a screen reader and navigating by links, or via focusable content with the <kbd>tab</kbd> key would not come across the currently active link.  The counter argument for using a hyperlink in the last breadcrumb list item is that, since it represents the current page, there's little reason to include it in the document's keyboard focus order.  
             </p>
           </section>
 
