@@ -17,13 +17,12 @@
             Accessible Breadcrumb Navigation Pattern
           </h1>
           <p>Published: <span>April 3, 2017</span></p>
-          <p>Last updated: <span>December 11, 2021</span></p>
+          <p>Last updated: <span>August 12, 2022</span></p>
           <nav>
             <a href="https://github.com/scottaohara/a11y_breadcrumbs">See source on GitHub</a>
           </nav>
         </div>
-        <div class="demo">
-          
+        <div class="demo"> 
           <p>
             Examples of a breadcrumb navigation using <code>aria-label</code> to provide an accessible name, and <code>aria-current</code> to indicate the currently active link.
           </p>
@@ -164,7 +163,7 @@
 
             <h4>Usage note</h4>
             <p>
-              Being that a breadcrumb is contained within a <code>nav</code> element, it will be surfaced as a landmark to screen readers.  Providing it an accessible name of "breadcrumb" (or whatever term may be more meaningful to your site) will help differentiate it from any other navigation landmarks in the current document, such as the "primary" navigation.
+              Being that a breadcrumb is contained within a <code>&lt;nav></code> element, it will be surfaced as a landmark to screen readers.  Providing it an accessible name of "breadcrumb" (or whatever term may be more meaningful to your site) will help differentiate it from any other navigation landmarks in the current document, such as the "primary" navigation.
             </p>
 
             <p>
@@ -172,7 +171,7 @@
             </p>
 
             <p>
-              Some other breadcrumb patterns remove the <code>&lt;a></code> element, or at least the <code>href</code> from the link.  This is demonstrated in the third example, where the first two examples keep the last item in the breadcrumb as a hyperlink.  One reason to keep the hyperlink is so that people using a screen reader and navigating by links, or via focusable content with the <kbd>tab</kbd> key would not come across the currently active link.  The counter argument for using a hyperlink in the last breadcrumb list item is that, since it represents the current page, there's little reason to include it in the document's keyboard focus order.  
+              Some other breadcrumb patterns remove the <code>&lt;a></code> element, or at least the <code>href</code> from the link. This is demonstrated in the third example, where the first two examples keep the last item in the breadcrumb as a hyperlink.  One reason to keep the hyperlink is so that people using a screen reader and navigating by links, or via focusable content with the <kbd>tab</kbd> key would not come across the currently active link.  The counter argument for using a hyperlink in the last breadcrumb list item is that, since it represents the current page, there's little reason to include it in the document's keyboard focus order.  
             </p>
           </section>
 
@@ -185,11 +184,11 @@
           </p>
           <p>
             Additionally, you should review
-            <a href="https://w3c.github.io/aria-practices/examples/breadcrumb/index.html">the <abbr>ARIA</abbr> Authoring Practices breadcrumbs example</a>,
-            as well as the <a href="https://www.w3.org/TR/wai-aria-1.2/#aria-current">ARIA specification for <code>aria-current</code></a>.
+            <a href="https://www.w3.org/WAI/ARIA/apg/example-index/breadcrumb/index.html">the <abbr>ARIA</abbr> Authoring Practices Guide breadcrumb navigation example</a>,
+            as well as the <a href="https://w3c.github.io/aria/#aria-current">ARIA specification for <code>aria-current</code></a>.
           </p>
           <p>
-            Thank you to <a href="https://twitter.com/ZoeBijl">@ZoeBijl</a> and the APG for a more elegant solution for breadcrumb dividers, and <a href="https://twitter.com/inclusicomps">@inclusicomps</a> for reminding me that <a href="https://css-tricks.com/almanac/properties/s/speak/">CSS speak has poor support</a>.
+            Thank you to <a href="https://twitter.com/ZoeBijl">@ZoeBijl</a> and the APG for a more elegant solution for breadcrumb dividers, and <a href="https://twitter.com/inclusicomps">@inclusicomps</a> for reminding me that <a href="https://css-tricks.com/almanac/properties/s/speak/">CSS <code>speak</code> has poor support</a>.
           </p>
         </div>
       </main>
